@@ -277,15 +277,15 @@ function App() {
                   <td className="p-4 whitespace-nowrap">{item.date}</td>
                   <td className="p-4">
                     <span className={`px-2 py-1 rounded-full text-xs ${item.type === "Income"
-                        ? "bg-green-100 text-green-700"
-                        : "bg-red-100 text-red-700"
+                      ? "bg-green-100 text-green-700"
+                      : "bg-red-100 text-red-700"
                       }`}>
                       {item.type}
                     </span>
                   </td>
                   <td className={`p-4 font-semibold ${item.type === "Income"
-                      ? "text-green-600"
-                      : "text-red-600"
+                    ? "text-green-600"
+                    : "text-red-600"
                     }`}>
                     {item.type === "Income" ? "+" : "-"}
                     {formatMoney(item.amount)}
@@ -584,7 +584,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-800 flex">
+    <div className="h-screen overflow-hidden bg-slate-50 text-slate-800 flex">
       {menuOpen && (
         <div
           className="fixed inset-0 bg-black/40 z-30 lg:hidden"
@@ -592,7 +592,7 @@ function App() {
         />
       )}
 
-      <aside className={`fixed lg:static inset-y-0 left-0 z-40 w-64 bg-slate-950 text-white flex flex-col transition-transform ${menuOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
+      <aside className={`fixed inset-y-0 left-0 z-40 w-64 h-screen bg-slate-950 text-white flex flex-col transition-transform ${menuOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
         }`}>
         <div className="p-6 border-b border-slate-800">
           <div className="flex items-center gap-3">
@@ -621,8 +621,8 @@ function App() {
                   setMenuOpen(false);
                 }}
                 className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm ${activePage === item.name
-                    ? "bg-indigo-600 text-white"
-                    : "text-slate-400 hover:bg-slate-800 hover:text-white"
+                  ? "bg-indigo-600 text-white"
+                  : "text-slate-400 hover:bg-slate-800 hover:text-white"
                   }`}
               >
                 <Icon size={19} />
@@ -639,7 +639,7 @@ function App() {
         </div>
       </aside>
 
-      <main className="flex-1 min-w-0">
+      <main className="flex-1 min-w-0 h-screen overflow-y-auto lg:ml-64">
         <header className="bg-white border-b border-slate-100 px-5 lg:px-8 py-4 flex justify-between items-center">
           <div className="flex items-center gap-3">
             <button
